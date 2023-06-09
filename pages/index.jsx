@@ -20,14 +20,13 @@ export default function Home() {
       });
   }, []);
 
-
   return (
     <main>
       <h1 className="m-4 text-3xl font-bold text-center">Game of Thrones</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {characters.map((character) => (
-          <Link href={"/character/[id]"} as={`character/${character.id}`}>
-            <div key={character.id} className="p-4 bg-gray-100 rounded-lg">
+          <Link href={`/character/${character.id}`} key={character.id}>
+            <div className="p-4 bg-gray-100 rounded-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
               <h2 className="text-xl font-bold text-black">
                 {character.fullName}
               </h2>
